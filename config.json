@@ -1,0 +1,184 @@
+{
+  "configVersion": 1,
+  "status": "draft-not-wired",
+  "applied": false,
+  "note": "这是 ep53 的配置草案，尚未接入代码。当前实际渲染仍以 timeline.ts / Ep53Debt.tsx / audio/episodes/ep53-national-debt.mjs 为准；等接入后再让脚本读取本文件。",
+  "episode": {
+    "id": "ep53-national-debt",
+    "title": "国债的账单",
+    "style": "blackgold",
+    "composition": "ep53-national-debt",
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "durationSec": 180,
+    "bpm": 120,
+    "language": "zh-CN"
+  },
+  "paths": {
+    "projectRoot": ".",
+    "episodeDir": "src/episodes/ep53-national-debt",
+    "timeline": "src/episodes/ep53-national-debt/timeline.ts",
+    "mainComponent": "src/episodes/ep53-national-debt/Ep53Debt.tsx",
+    "audioDir": "public/audio/ep53-national-debt",
+    "outputDir": "products/one"
+  },
+  "voice": {
+    "enabled": true,
+    "mode": "tts",
+    "mixMode": "external",
+    "note": "tts=程序合成；recorded=真人录音；none=无人声。正式发布建议换真人录音。",
+    "source": "products/one/ep53-national-debt-voice.wav",
+    "plan": "products/one/voice-plan.json",
+    "manifest": "products/one/voice-manifest.json",
+    "tts": {
+      "provider": "edge-tts",
+      "voice": "zh-CN-YunyangNeural",
+      "ratePercent": 0,
+      "maxRatePercent": 50,
+      "fitWindowRatio": 0.94,
+      "output": "products/one/voice.wav"
+    },
+    "mix": {
+      "volume": 1.0,
+      "normalizeLufs": -17,
+      "truePeakDb": -1.5
+    },
+    "ducking": {
+      "enabled": true,
+      "target": "bgm",
+      "threshold": 0.02,
+      "ratio": 8,
+      "attackMs": 15,
+      "releaseMs": 300
+    }
+  },
+  "bgm": {
+    "enabled": true,
+    "mode": "generated",
+    "note": "generated=audio/episodes 里的程序化编曲；variant=bgm-variants 试听；external=public/music 下的授权曲目。",
+    "engine": "audio/bgm.mjs",
+    "episodeScript": "audio/episodes/ep53-national-debt.mjs",
+    "source": "public/audio/ep53-national-debt/bgm.wav",
+    "variantSource": null,
+    "volume": 0.55,
+    "loudnessLufs": -16,
+    "sections": [
+      [0, "bright"],
+      [8, "light"],
+      [16, "break"],
+      [20, "groove"],
+      [40, "tense"],
+      [60, "tense"],
+      [88, "light"],
+      [112, "tense"],
+      [136, "tense"],
+      [144, "bright"],
+      [152, "light"],
+      [164, "break"],
+      [176, "end"]
+    ]
+  },
+  "sfx": {
+    "enabled": true,
+    "source": "products/one/ep53-national-debt-sfx.wav",
+    "timelineTable": "src/episodes/ep53-national-debt/timeline.ts#SFX",
+    "volume": 0.55,
+    "generate": {
+      "engine": "audio/sfx-tactical.mjs",
+      "preset": "tactical",
+      "note": "具体振荡器 / 包络 / 滤波在 audio/sfx-tactical.mjs；本配置只控制选用哪些音效、输出目录和峰值。",
+      "outputDir": "public/audio/ep53-national-debt",
+      "peakDb": -6,
+      "local": [
+        "impact",
+        "riser",
+        "tick"
+      ],
+      "sharedDir": "public/audio/sfx",
+      "shared": [
+        "paper",
+        "stamp",
+        "whoosh",
+        "ding"
+      ]
+    },
+    "overrides": []
+  },
+  "captions": {
+    "enabled": true,
+    "mode": "burned",
+    "note": "burned=烧进视频；srt=只导出字幕；both=两者都要；none=不出字幕。",
+    "source": "src/episodes/ep53-national-debt/timeline.ts#CUES",
+    "languages": [
+      "zh",
+      "en"
+    ],
+    "maxCharsZh": 18,
+    "burnedSize": 56,
+    "burnedY": 950,
+    "export": {
+      "srt": "products/one/ep53-national-debt.srt",
+      "markdown": "products/one/ep53-national-debt-subtitles.md"
+    }
+  },
+  "cover": {
+    "enabled": true,
+    "composition": "ep53-national-debt-cover-tall",
+    "width": 1080,
+    "height": 1440,
+    "output": "products/one/ep53-national-debt-cover.png"
+  },
+  "render": {
+    "concurrency": 8,
+    "crf": 18,
+    "videoCodec": "h264",
+    "pixelFormat": "yuv420p",
+    "audioCodec": "aac",
+    "audioBitrate": "192k",
+    "mutedForNoAudio": true,
+    "outputs": {
+      "_note": "videoNoAudioNoCaptions 目前未生成；其余路径已存在或可由现有命令生成。",
+      "videoWithAudio": "products/one/ep53-national-debt.mp4",
+      "videoVoice": "products/one/ep53-national-debt-voice.mp4",
+      "videoNoAudioCaptions": "products/one/ep53-national-debt-noaudio-captions.mp4",
+      "videoNoAudioNoCaptions": "products/one/ep53-national-debt-noaudio-nocaptions.mp4",
+      "audioFull": "products/one/ep53-national-debt-audio.wav",
+      "audioVoice": "products/one/ep53-national-debt-voice.wav",
+      "audioVoiceMix": "products/one/ep53-national-debt-voice-mix.wav",
+      "bgm": "products/one/ep53-national-debt-bgm.wav",
+      "sfx": "products/one/ep53-national-debt-sfx.wav",
+      "bgmVariantDir": "products/one/bgm-variants"
+    }
+  },
+  "loudness": {
+    "targetLufs": -16,
+    "truePeakDb": -1.5,
+    "limiter": {
+      "enabled": true,
+      "limit": 0.841
+    }
+  },
+  "qa": {
+    "runTests": true,
+    "checkNoAudioStream": true,
+    "checkLoudness": true,
+    "stillsSec": [
+      10,
+      41,
+      61,
+      89,
+      155,
+      170
+    ],
+    "contactSheet": true
+  },
+  "sourceOfTruth": {
+    "timingAndCaptions": "src/episodes/ep53-national-debt/timeline.ts",
+    "visuals": "src/episodes/ep53-national-debt/scenes.tsx",
+    "audioMixing": "src/episodes/ep53-national-debt/Ep53Debt.tsx",
+    "bgmArrangement": "audio/episodes/ep53-national-debt.mjs",
+    "voiceAlignment": "products/one/voice-plan.json",
+    "note": "在 config 接入代码之前，上面的文件仍是实际真源；不要把同一组时间/音量同时写进 config 和 timeline 后各自修改。"
+  }
+}

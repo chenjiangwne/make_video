@@ -114,6 +114,16 @@ import {Ep36CoverTall} from './episodes/ep36-boxed-pigs/CoverTall';
 import {DURATION as EP38_DURATION, FPS as EP38_FPS, H as EP38_H, W as EP38_W} from './episodes/ep38-butterfly/timeline';
 import {Ep38Butterfly} from './episodes/ep38-butterfly/Ep38Butterfly';
 import {Ep38CoverTall} from './episodes/ep38-butterfly/CoverTall';
+import {DURATION as EP52_DURATION, FPS as EP52_FPS, H as EP52_H, W as EP52_W} from './episodes/ep52-microwave-target/timeline';
+import {Ep52Microwave} from './episodes/ep52-microwave-target/Ep52Microwave';
+import {Ep52CoverTall} from './episodes/ep52-microwave-target/CoverTall';
+import {DURATION as EP53_DURATION, FPS as EP53_FPS, H as EP53_H, W as EP53_W} from './episodes/ep53-national-debt/timeline';
+import {Ep53Debt} from './episodes/ep53-national-debt/Ep53Debt';
+import {Ep53CoverTall} from './episodes/ep53-national-debt/CoverTall';
+import {DURATION as EP54_DURATION, FPS as EP54_FPS, H as EP54_H, W as EP54_W} from './episodes/ep54-national-debt-story/timeline';
+import {Ep54DebtStory} from './episodes/ep54-national-debt-story/Ep54DebtStory';
+import {DURATION as IMPORT_DEMO_DURATION, FPS as IMPORT_DEMO_FPS, H as IMPORT_DEMO_H, W as IMPORT_DEMO_W} from './episodes/import-demo-noaudio/timeline';
+import {ImportDemoNoAudio} from './episodes/import-demo-noaudio/ImportDemo';
 import {DURATION as EP26_DURATION} from './episodes/ep26-opus-video/cues';
 import {EP26_H, EP26_W, Ep26OpusVideo} from './episodes/ep26-opus-video/Ep26OpusVideo';
 import {Ep26CoverTall} from './episodes/ep26-opus-video/Cover';
@@ -226,6 +236,11 @@ export const Root: React.FC = () => (
       <Still id="ep36-boxed-pigs-cover-tall" component={Ep36CoverTall} width={1080} height={1440} />
       <Composition id="ep38-butterfly" component={Ep38Butterfly} durationInFrames={EP38_DURATION} fps={EP38_FPS} width={EP38_W} height={EP38_H} />
       <Still id="ep38-butterfly-cover-tall" component={Ep38CoverTall} width={1080} height={1440} />
+      <Composition id="ep52-microwave-target" component={Ep52Microwave} durationInFrames={EP52_DURATION} fps={EP52_FPS} width={EP52_W} height={EP52_H} />
+      <Still id="ep52-microwave-target-cover-tall" component={Ep52CoverTall} width={1080} height={1440} />
+      <Composition id="ep53-national-debt" component={Ep53Debt} durationInFrames={EP53_DURATION} fps={EP53_FPS} width={EP53_W} height={EP53_H} />
+      <Still id="ep53-national-debt-cover-tall" component={Ep53CoverTall} width={1080} height={1440} />
+      <Composition id="ep54-national-debt-story" component={Ep54DebtStory} durationInFrames={EP54_DURATION} fps={EP54_FPS} width={EP54_W} height={EP54_H} />
     </Folder>
     <Folder name="99-素材预览">
       <Composition id="library-wardrobe" component={Wardrobe} durationInFrames={150} fps={FPS} width={1080} height={1920} />
@@ -239,6 +254,7 @@ export const Root: React.FC = () => (
       <Composition id="library-warm-desk-show" component={WarmDeskShowDemo} durationInFrames={WARM_DESK_SHOW_FRAMES} fps={FPS} width={1920} height={1080} />
       <Still id="library-warm-desk-cover" component={WarmDeskCoverDemo} width={1080} height={1440} />
       <Composition id="library-pixel-wardrobe" component={PixelWardrobe} durationInFrames={150} fps={FPS} width={1080} height={1080} />
+      <Composition id="import-demo-noaudio" component={ImportDemoNoAudio} durationInFrames={IMPORT_DEMO_DURATION} fps={IMPORT_DEMO_FPS} width={IMPORT_DEMO_W} height={IMPORT_DEMO_H} />
     </Folder>
   </>
 );
